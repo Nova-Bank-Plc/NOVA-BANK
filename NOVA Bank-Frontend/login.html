@@ -1,0 +1,797 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0">
+
+    <title>Login | NOVA Bank</title>
+
+    <link rel="stylesheet" href="login.css">
+
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+</head>
+<style>
+/* ==========================================
+   NOVA LOGIN PAGE
+========================================== */
+
+:root{
+
+--primary:#0B5ED7;
+--primary-dark:#084298;
+--secondary:#EAF3FF;
+--navy:#051B46;
+--white:#FFFFFF;
+--text:#1F2937;
+--border:#E5E7EB;
+--light:#F8FAFC;
+--success:#22C55E;
+
+}
+
+*{
+
+margin:0;
+padding:0;
+box-sizing:border-box;
+
+}
+
+body{
+
+font-family:"Poppins",sans-serif;
+background:#F5F8FD;
+
+}
+
+body{
+
+font-family:"Poppins",sans-serif;
+background:#F5F8FD;
+overflow-x:hidden;
+
+}
+
+a{
+
+text-decoration:none;
+
+}
+
+.login-container{
+
+display:grid;
+grid-template-columns:1fr 1fr;
+min-height:100vh;
+width:100%;
+
+}
+
+/* ==========================================
+   LEFT PANEL
+========================================== */
+
+.login-brand{
+
+background:linear-gradient(135deg,#051B46,#0B5ED7);
+color:#fff;
+display:flex;
+align-items:center;
+justify-content:center;
+padding:70px;
+
+}
+
+.brand-content{
+
+max-width:500px;
+
+}
+
+.logo{
+
+display:flex;
+align-items:center;
+gap:14px;
+margin-bottom:40px;
+
+}
+
+.logo-icon{
+
+width:60px;
+height:60px;
+border-radius:16px;
+background:rgba(255,255,255,.15);
+display:flex;
+align-items:center;
+justify-content:center;
+font-size:24px;
+
+}
+
+.logo span{
+
+font-size:28px;
+font-weight:700;
+
+}
+
+.brand-content h1{
+
+font-size:52px;
+line-height:1.1;
+margin-bottom:25px;
+
+}
+
+.brand-content p{
+
+font-size:17px;
+line-height:1.8;
+opacity:.9;
+margin-bottom:45px;
+
+}
+
+.brand-features{
+
+list-style:none;
+display:flex;
+flex-direction:column;
+gap:22px;
+
+}
+
+.brand-features li{
+
+display:flex;
+align-items:center;
+gap:15px;
+font-size:17px;
+
+}
+
+.brand-features i{
+
+color:#6EE7B7;
+font-size:20px;
+
+}
+
+/* ==========================================
+   RIGHT PANEL
+========================================== */
+
+.login-wrapper{
+
+display:flex;
+align-items:center;
+justify-content:center;
+padding:80px 40px;
+background:#fff;
+
+}
+
+.login-form{
+
+width:100%;
+max-width:480px;
+
+}
+
+.login-form h2{
+
+font-size:38px;
+color:var(--navy);
+margin-bottom:10px;
+
+}
+
+.form-subtitle{
+
+font-size:16px;
+color:#6B7280;
+margin-bottom:35px;
+
+}
+
+/* ==========================================
+   INPUTS
+========================================== */
+
+.input-group{
+
+margin-bottom:22px;
+
+}
+
+.input-group label{
+
+display:block;
+margin-bottom:8px;
+font-weight:600;
+color:var(--navy);
+
+}
+
+.input-group input{
+
+width:100%;
+height:56px;
+border:1px solid var(--border);
+border-radius:14px;
+padding:0 18px;
+font-size:15px;
+transition:.3s;
+
+}
+
+.input-group input:focus{
+
+border-color:var(--primary);
+outline:none;
+box-shadow:0 0 0 4px rgba(11,94,215,.15);
+
+}
+
+.remember input{
+
+width:auto;
+height:auto;
+
+}
+
+.password-field{
+
+position:relative;
+
+}
+
+.password-field input{
+
+padding-right:60px;
+
+}
+
+.toggle-password{
+
+position:absolute;
+right:18px;
+top:50%;
+transform:translateY(-50%);
+border:none;
+background:none;
+cursor:pointer;
+font-size:18px;
+color:#6B7280;
+
+}
+
+/* ==========================================
+   OPTIONS
+========================================== */
+
+.login-options{
+
+display:flex;
+justify-content:space-between;
+align-items:center;
+margin-bottom:30px;
+
+}
+
+.remember{
+
+display:flex;
+align-items:center;
+gap:10px;
+font-size:14px;
+
+}
+
+.login-options a{
+
+color:var(--primary);
+font-weight:600;
+
+}
+
+/* ==========================================
+   BUTTON
+========================================== */
+
+.login-btn{
+
+width:100%;
+height:58px;
+border:none;
+border-radius:15px;
+background:var(--primary);
+color:#fff;
+font-size:17px;
+font-weight:600;
+cursor:pointer;
+transition:.3s;
+
+}
+
+.login-btn:hover{
+
+background:var(--primary-dark);
+transform:translateY(-2px);
+
+}
+
+/* ==========================================
+   DIVIDER
+========================================== */
+
+.divider{
+
+margin:35px 0;
+display:flex;
+align-items:center;
+justify-content:center;
+position:relative;
+
+}
+
+.divider::before{
+
+content:"";
+position:absolute;
+left:0;
+width:42%;
+height:1px;
+background:#ddd;
+
+}
+
+.divider::after{
+
+content:"";
+position:absolute;
+right:0;
+width:42%;
+height:1px;
+background:#ddd;
+
+}
+
+.divider span{
+
+background:#fff;
+padding:0 15px;
+color:#777;
+
+}
+
+/* ==========================================
+   SOCIAL LOGIN
+========================================== */
+
+.social-login{
+
+display:flex;
+flex-direction:column;
+gap:15px;
+
+}
+
+.social-login button{
+
+height:56px;
+border-radius:14px;
+border:1px solid var(--border);
+background:#fff;
+cursor:pointer;
+font-size:15px;
+font-weight:600;
+transition:.3s;
+
+}
+
+.social-login button:hover{
+
+background:#F8FAFC;
+
+}
+
+.social-login i{
+
+margin-right:12px;
+
+}
+
+/* ==========================================
+   REGISTER
+========================================== */
+
+.register-link{
+
+margin-top:35px;
+text-align:center;
+font-size:15px;
+
+}
+
+.register-link a{
+
+font-weight:700;
+color:var(--primary);
+
+}
+
+
+
+/* ==========================================
+   RESPONSIVE
+========================================== */
+
+@media(max-width:992px){
+
+.login-container{
+
+grid-template-columns:1fr;
+
+}
+
+.login-brand{
+
+padding:60px 30px;
+
+}
+
+.login-brand h1{
+
+font-size:2.8rem;
+
+}
+
+}
+</style>
+<body>
+    <!-- ===========================
+         LEFT BRAND PANEL
+    ============================ -->
+<div class="login-container">
+
+    <div class="login-brand">
+
+        <div class="brand-content">
+
+            <div class="logo">
+
+                <div class="logo-icon">
+
+                    <i class="fa-solid fa-building-columns"></i>
+
+                </div>
+
+                <span>NOVA Bank</span>
+
+            </div>
+
+            <h1>
+                Welcome Back.
+            </h1>
+
+            <p>
+
+                Sign in securely and manage your money with confidence. Your finances are protected with bank-grade security.
+
+            </p>
+
+            <ul class="brand-features">
+
+                <li>
+
+                    <i class="fa-solid fa-shield-halved"></i>
+
+                    Bank-grade Security
+
+                </li>
+
+                <li>
+
+                    <i class="fa-solid fa-globe"></i>
+
+                    Worldwide Banking
+
+                </li>
+
+                <li>
+
+                    <i class="fa-solid fa-bolt"></i>
+
+                    Instant Transfers
+
+                </li>
+
+                <li>
+
+                    <i class="fa-solid fa-headset"></i>
+
+                    24/7 Customer Support
+
+                </li>
+
+            </ul>
+
+        </div>
+
+    </div>
+
+
+    <!-- ===========================
+         LOGIN FORM
+    ============================ -->
+
+    <div class="login-wrapper">
+
+        <form class="login-form">
+
+            <h2>Sign In</h2>
+
+            <p class="form-subtitle">
+
+                Access your NOVA Bank account.
+
+            </p>
+
+
+            <!-- Email -->
+
+            <div class="input-group">
+
+                <label>Email Address</label>
+
+                <input
+                    type="email"
+                    placeholder="Enter your email"
+                    required>
+
+            </div>
+
+
+            <!-- Password -->
+
+            <div class="input-group">
+
+                <label>Password</label>
+
+                <div class="password-field">
+
+                    <input
+                        type="password"
+                        id="loginPassword"
+                        placeholder="Enter your password"
+                        required>
+
+                    <button
+                        type="button"
+                        class="toggle-password">
+
+                        <i class="fa-solid fa-eye"></i>
+
+                    </button>
+
+                </div>
+
+            </div>
+
+
+            <!-- Remember -->
+
+            <div class="login-options">
+
+                <label class="remember">
+
+                    <input type="checkbox">
+
+                    Remember Me
+
+                </label>
+
+                <a href="forgot-password.html">
+
+                    Forgot Password?
+
+                </a>
+
+            </div>
+
+
+            <!-- Login -->
+
+            <button
+                type="submit"
+                class="login-btn">
+
+                Sign In
+
+            </button>
+
+
+            <!-- Divider -->
+
+            <div class="divider">
+
+                <span>OR</span>
+
+            </div>
+
+
+            <!-- Social Login -->
+
+            <div class="social-login">
+
+                <button
+                    type="button"
+                    class="google-btn">
+
+                    <i class="fa-brands fa-google"></i>
+
+                    Continue with Google
+
+                </button>
+
+                <button
+                    type="button"
+                    class="apple-btn">
+
+                    <i class="fa-brands fa-apple"></i>
+
+                    Continue with Apple
+
+                </button>
+
+            </div>
+
+
+            <!-- Register -->
+
+            <div class="register-link">
+
+                Don't have an account?
+
+                <a href="register.html">
+
+                    Create Account
+
+                </a>
+
+            </div>
+
+        </form>
+
+    </div>
+
+</div>
+
+<script>
+/* ==========================================
+   NOVA BANK LOGIN
+========================================== */
+
+const loginForm = document.querySelector(".login-form");
+const passwordInput = document.getElementById("loginPassword");
+const togglePassword = document.querySelector(".toggle-password");
+const loginButton = document.querySelector(".login-btn");
+
+if(loginForm && passwordInput && togglePassword && loginButton){
+
+/* ==========================
+   SHOW / HIDE PASSWORD
+========================== */
+
+togglePassword.addEventListener("click", () => {
+
+    const icon = togglePassword.querySelector("i");
+
+    if(passwordInput.type === "password"){
+
+        passwordInput.type = "text";
+
+        icon.classList.remove("fa-eye");
+        icon.classList.add("fa-eye-slash");
+
+    }else{
+
+        passwordInput.type = "password";
+
+        icon.classList.remove("fa-eye-slash");
+        icon.classList.add("fa-eye");
+
+    }
+
+});
+
+
+/* ==========================
+   LOGIN VALIDATION
+========================== */
+
+loginForm.addEventListener("submit",(e)=>{
+
+    e.preventDefault();
+
+    const email =
+    loginForm.querySelector("input[type='email']").value.trim();
+
+    const password =
+    passwordInput.value.trim();
+
+    if(email === ""){
+
+        alert("Please enter your email address.");
+
+        return;
+
+    }
+
+    if(password === ""){
+
+        alert("Please enter your password.");
+
+        return;
+
+    }
+
+    if(password.length < 6){
+
+        alert("Password must be at least 6 characters.");
+
+        return;
+
+    }
+
+
+    /* ==========================
+       LOADING ANIMATION
+    ========================== */
+
+    loginButton.disabled = true;
+
+    loginButton.innerHTML = `
+        <i class="fa-solid fa-spinner fa-spin"></i>
+        Signing In...
+    `;
+
+
+    setTimeout(()=>{
+
+        loginButton.innerHTML = `
+        <i class="fa-solid fa-circle-check"></i>
+        Login Successful
+        `;
+
+        loginButton.style.background="#22C55E";
+
+
+        /* ==========================
+           REDIRECT
+        ========================== */
+
+        setTimeout(()=>{
+
+            window.location.href="dashboard.html";
+
+        },1500);
+
+    },2000);
+
+});
+}
+</script>
+
+</body>
+
+</html>
