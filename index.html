@@ -1,0 +1,3445 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>NOVA Bank | Banking Built For The Future</title>
+
+<meta name="description"
+content="Secure digital banking, personal banking, business banking, loans and cards.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+<link rel="stylesheet" href="style.css">
+
+</head>
+<style>
+    :root{
+
+--navy:#031B4E;
+--blue:#0B5ED7;
+--blue-dark:#084298;
+
+--white:#ffffff;
+
+--light:#F8FAFC;
+
+--text:#0F172A;
+
+--muted:#64748B;
+
+}
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
+
+body{
+
+font-family:'Inter',sans-serif;
+
+background:white;
+
+color:var(--text);
+
+overflow-x:hidden;
+
+}
+
+a{
+text-decoration:none;
+}
+
+ul{
+list-style:none;
+}
+
+.container{
+
+width:90%;
+
+max-width:1200px;
+
+margin:auto;
+
+}
+
+/* HEADER */
+
+.header{
+
+position:fixed;
+
+top:0;
+
+width:100%;
+
+z-index:1000;
+
+background:white;
+
+border-bottom:1px solid #E5E7EB;
+
+}
+
+.navbar{
+
+height:85px;
+
+display:flex;
+
+align-items:center;
+
+justify-content:space-between;
+
+}
+
+.logo{
+
+display:flex;
+
+align-items:center;
+
+gap:12px;
+
+font-size:1.4rem;
+
+font-weight:800;
+
+color:var(--navy);
+
+}
+
+.logo-icon{
+
+width:45px;
+
+height:45px;
+
+border-radius:12px;
+
+background:var(--blue);
+
+color:white;
+
+display:flex;
+
+align-items:center;
+
+justify-content:center;
+
+}
+
+.nav-links{
+
+display:flex;
+
+gap:35px;
+
+}
+
+.nav-links a{
+
+color:var(--text);
+
+font-weight:600;
+
+}
+
+.nav-actions{
+
+display:flex;
+
+gap:15px;
+
+}
+
+.login-btn{
+
+padding:12px 22px;
+
+border:1px solid var(--blue);
+
+border-radius:12px;
+
+color:var(--blue);
+
+font-weight:700;
+
+}
+
+.open-btn{
+
+padding:12px 22px;
+
+background:var(--blue);
+
+color:white;
+
+border-radius:12px;
+
+font-weight:700;
+
+}
+
+
+/* =========================
+   MOBILE NAVIGATION
+========================= */
+.mobile-toggle{
+
+display:none;
+
+font-size:1.7rem;
+
+cursor:pointer;
+
+color:rgba(0, 0, 0, 0.884);
+
+}
+
+
+.mobile-menu{
+
+position:fixed;
+
+top:0;
+
+right:-100%;
+
+width:320px;
+
+height:100vh;
+
+background:rgb(255, 255, 255);
+
+z-index:9999;
+
+padding:30px;
+
+transition:.4s ease;
+
+display:flex;
+
+flex-direction:column;
+
+gap:20px;
+
+box-shadow:-10px 0 40px rgba(0,0,0,.15);
+
+}
+
+.mobile-menu.active{
+
+right:0;
+
+}
+
+.mobile-menu-header{
+
+display:flex;
+
+justify-content:space-between;
+
+align-items:center;
+
+margin-bottom:20px;
+
+}
+
+.mobile-menu-header h3{
+
+color:#041E42;
+
+font-size:1.3rem;
+
+}
+
+.mobile-menu-header i{
+
+font-size:1.5rem;
+
+cursor:pointer;
+
+color:#041E42;
+
+}
+
+.mobile-menu a{
+
+color:#041E42;
+
+font-weight:600;
+
+padding:10px 0;
+
+}
+
+.mobile-login{
+
+border:1px solid #0B5ED7;
+
+padding:14px;
+
+border-radius:12px;
+
+text-align:center;
+
+}
+
+.mobile-open-btn{
+
+background:#0B5ED7;
+
+color:white !important;
+
+padding:14px;
+
+border-radius:12px;
+
+text-align:center;
+
+}
+
+.mobile-menu-overlay{
+
+position:fixed;
+
+top:0;
+
+left:0;
+
+width:100%;
+
+height:100%;
+
+background:rgba(0,0,0,.45);
+
+opacity:0;
+
+visibility:hidden;
+
+transition:.3s;
+
+z-index:9998;
+
+}
+
+.mobile-menu-overlay.active{
+
+opacity:1;
+
+visibility:visible;
+
+}
+
+/* HERO */
+
+.hero{
+
+padding-top:160px;
+
+padding-bottom:120px;
+
+background:
+
+linear-gradient(
+135deg,
+#031B4E,
+#0B5ED7
+);
+
+}
+
+.hero-grid{
+
+display:grid;
+
+grid-template-columns:1fr 1fr;
+
+align-items:center;
+
+gap:80px;
+
+}
+
+.hero-content{
+
+color:white;
+
+}
+
+.hero-badge{
+
+display:inline-flex;
+
+align-items:center;
+
+gap:10px;
+
+padding:10px 18px;
+
+background:
+rgba(255,255,255,.12);
+
+border-radius:50px;
+
+margin-bottom:25px;
+
+}
+
+.hero-content h1{
+
+font-size:4rem;
+
+line-height:1.1;
+
+margin-bottom:25px;
+
+}
+
+.hero-content p{
+
+color:
+rgba(255,255,255,.8);
+
+font-size:1.1rem;
+
+line-height:1.8;
+
+max-width:550px;
+
+}
+
+.hero-buttons{
+
+display:flex;
+
+gap:15px;
+
+margin-top:35px;
+
+}
+
+.primary-btn{
+
+padding:16px 30px;
+
+background:white;
+
+color:var(--navy);
+
+border-radius:12px;
+
+font-weight:700;
+
+}
+
+.secondary-btn{
+
+padding:16px 30px;
+
+border:1px solid rgba(255,255,255,.4);
+
+color:white;
+
+border-radius:12px;
+
+font-weight:700;
+
+}
+
+/* HERO VISUAL */
+
+.hero-visual{
+
+position:relative;
+
+height:450px;
+
+}
+
+.nova-card{
+
+position:absolute;
+
+top:50%;
+
+left:50%;
+
+transform:
+translate(-50%,-50%);
+
+width:340px;
+
+height:210px;
+
+padding:30px;
+
+border-radius:24px;
+
+background:
+
+linear-gradient(
+135deg,
+#02102E,
+#0B5ED7
+);
+
+color:white;
+
+box-shadow:
+0 30px 70px rgba(0,0,0,.3);
+
+}
+
+.card-chip{
+
+width:50px;
+
+height:38px;
+
+background:#D4AF37;
+
+border-radius:8px;
+
+margin-bottom:35px;
+
+}
+
+.floating-badge{
+
+position:absolute;
+
+background:white;
+
+padding:14px 18px;
+
+border-radius:14px;
+
+box-shadow:
+0 10px 30px rgba(0,0,0,.15);
+
+display:flex;
+
+align-items:center;
+
+gap:10px;
+
+font-weight:600;
+
+}
+
+.security{
+
+top:40px;
+
+left:0;
+
+}
+
+.transfer{
+
+right:0;
+
+top:140px;
+
+}
+
+.global{
+
+bottom:40px;
+
+left:50px;
+
+}
+
+/* TRUST==STRIP==*/
+.trust-strip{
+
+padding:90px 0;
+
+background:white;
+
+}
+
+.trust-grid{
+
+display:grid;
+
+grid-template-columns:repeat(4,1fr);
+
+gap:25px;
+
+}
+
+.trust-item{
+
+background:#F8FAFC;
+
+padding:35px;
+
+border-radius:22px;
+
+text-align:center;
+
+transition:.3s;
+
+border:1px solid #E2E8F0;
+
+}
+
+.trust-item:hover{
+
+transform:translateY(-8px);
+
+}
+
+.trust-item i{
+
+font-size:2rem;
+
+color:var(--blue);
+
+margin-bottom:20px;
+
+}
+
+.trust-item h3{
+
+font-size:1.1rem;
+
+margin-bottom:10px;
+
+}
+
+.trust-item p{
+
+color:var(--muted);
+
+line-height:1.7;
+
+}
+
+/*==SERVICES==*/
+.services{
+
+padding:120px 0;
+
+background:#F8FAFC;
+
+}
+
+.section-title{
+
+text-align:center;
+
+max-width:700px;
+
+margin:auto auto 70px;
+
+}
+
+.section-title span{
+
+color:var(--blue);
+
+font-weight:700;
+
+letter-spacing:1px;
+
+}
+
+.section-title h2{
+
+font-size:3rem;
+
+margin:15px 0;
+
+color:var(--navy);
+
+}
+
+.section-title p{
+
+color:var(--muted);
+
+line-height:1.8;
+
+}
+
+.services-grid{
+
+display:grid;
+
+grid-template-columns:repeat(3,1fr);
+
+gap:30px;
+
+}
+
+.service-card{
+
+background:white;
+
+padding:40px;
+
+border-radius:24px;
+
+border:1px solid #E5E7EB;
+
+transition:.3s;
+
+}
+
+.service-card:hover{
+
+transform:translateY(-10px);
+
+box-shadow:0 20px 40px rgba(0,0,0,.08);
+
+}
+
+.service-card i{
+
+font-size:2rem;
+
+color:var(--blue);
+
+margin-bottom:20px;
+
+}
+
+.service-card h3{
+
+margin-bottom:15px;
+
+}
+
+.service-card p{
+
+color:var(--muted);
+
+line-height:1.8;
+
+}
+
+@media(max-width:992px){
+
+.trust-grid{
+
+grid-template-columns:repeat(2,1fr);
+
+}
+
+.services-grid{
+
+grid-template-columns:1fr;
+
+}
+
+}
+
+@media(max-width:768px){
+
+.trust-grid{
+
+grid-template-columns:1fr;
+
+}
+
+.section-title h2{
+
+font-size:2rem;
+
+}
+
+}
+
+/*==BANKING==SECTION==*/
+.banking-section{
+
+padding:120px 0;
+
+background:white;
+
+}
+
+.light-bg{
+
+background:#F8FAFC;
+
+}
+
+.banking-grid{
+
+display:grid;
+
+grid-template-columns:1fr 1fr;
+
+gap:80px;
+
+align-items:center;
+
+}
+
+.reverse-grid{
+
+grid-template-columns:1fr 1fr;
+
+}
+
+.banking-image img{
+
+width:100%;
+
+border-radius:24px;
+
+}
+
+.section-label{
+
+color:var(--blue);
+
+font-weight:700;
+
+letter-spacing:1px;
+
+display:block;
+
+margin-bottom:15px;
+
+}
+
+.banking-content h2{
+
+font-size:3rem;
+
+line-height:1.2;
+
+margin-bottom:20px;
+
+color:var(--navy);
+
+}
+
+.banking-content p{
+
+color:var(--muted);
+
+line-height:1.9;
+
+margin-bottom:25px;
+
+}
+
+.feature-list{
+
+margin-bottom:35px;
+
+}
+
+.feature-list li{
+
+margin-bottom:15px;
+
+display:flex;
+
+align-items:center;
+
+gap:10px;
+
+font-weight:600;
+
+}
+
+.feature-list i{
+
+color:var(--blue);
+
+}
+
+.blue-btn{
+
+display:inline-block;
+
+padding:16px 28px;
+
+background:var(--blue);
+
+color:white;
+
+border-radius:12px;
+
+font-weight:700;
+
+}
+
+/* =========================
+   CARDS SECTION
+========================= */
+
+.cards-section{
+
+padding:120px 0;
+
+background:white;
+
+}
+
+.cards-grid{
+
+display:grid;
+
+grid-template-columns:repeat(3,1fr);
+
+gap:35px;
+
+margin-top:60px;
+
+}
+
+/* CARD */
+
+.bank-card{
+
+height:220px;
+
+padding:30px;
+
+border-radius:26px;
+
+color:white;
+
+position:relative;
+
+overflow:hidden;
+
+box-shadow:
+0 25px 50px rgba(0,0,0,.15);
+
+transition:.4s;
+
+}
+
+.bank-card:hover{
+
+transform:
+translateY(-10px);
+
+}
+
+.bank-card::before{
+
+content:"";
+
+position:absolute;
+
+width:250px;
+
+height:250px;
+
+background:
+rgba(255,255,255,.08);
+
+border-radius:50%;
+
+top:-100px;
+
+right:-80px;
+
+}
+
+/* COLORS */
+
+.platinum-card{
+
+background:
+linear-gradient(
+135deg,
+#02142E,
+#0B5ED7
+);
+
+}
+
+.gold-card{
+
+background:
+linear-gradient(
+135deg,
+#8B6914,
+#D4AF37
+);
+
+}
+
+.business-card{
+
+background:
+linear-gradient(
+135deg,
+#041E42,
+#0F4C81
+);
+
+}
+
+/* CONTENT */
+
+.card-top{
+
+display:flex;
+
+justify-content:space-between;
+
+margin-bottom:30px;
+
+font-weight:700;
+
+}
+
+.card-chip{
+
+width:55px;
+
+height:40px;
+
+background:#D4AF37;
+
+border-radius:8px;
+
+margin-bottom:35px;
+
+}
+
+.card-number{
+
+font-size:1.2rem;
+
+letter-spacing:2px;
+
+margin-bottom:30px;
+
+font-weight:600;
+
+}
+
+.card-bottom{
+
+display:flex;
+
+justify-content:space-between;
+
+}
+
+.card-bottom small{
+
+opacity:.8;
+
+display:block;
+
+margin-bottom:5px;
+
+}
+
+.card-bottom h4{
+
+font-size:.95rem;
+
+}
+
+/* =========================
+   WHY NOVA
+========================= */
+
+.why-nova{
+padding:120px 0;
+background:#F8FBFF;
+}
+
+.section-heading{
+text-align:center;
+max-width:800px;
+margin:0 auto 70px;
+}
+
+.section-tag{
+display:inline-block;
+padding:8px 18px;
+background:#EAF2FF;
+color:#0B5ED7;
+font-weight:700;
+font-size:.85rem;
+border-radius:30px;
+margin-bottom:20px;
+}
+
+.section-heading h2{
+font-size:3rem;
+line-height:1.15;
+font-weight:800;
+color:#031B4E;
+margin-bottom:20px;
+}
+
+.section-heading p{
+font-size:1.05rem;
+line-height:1.8;
+color:#64748B;
+max-width:650px;
+margin:auto;
+}
+
+/* GRID */
+
+.why-grid{
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:30px;
+}
+
+/* CARDS */
+
+.why-card{
+background:white;
+padding:40px 35px;
+border-radius:24px;
+box-shadow:0 15px 40px rgba(0,0,0,.06);
+transition:.3s;
+}
+
+.why-card:hover{
+transform:translateY(-8px);
+}
+
+.why-card i{
+width:70px;
+height:70px;
+background:#EAF2FF;
+color:#0B5ED7;
+border-radius:18px;
+display:flex;
+align-items:center;
+justify-content:center;
+font-size:1.8rem;
+margin-bottom:25px;
+}
+
+.why-card h3{
+font-size:1.35rem;
+color:#031B4E;
+margin-bottom:15px;
+}
+
+.why-card p{
+color:#64748B;
+line-height:1.8;
+}
+
+/* MOBILE */
+
+@media(max-width:992px){
+
+.why-grid{
+grid-template-columns:1fr;
+}
+
+.section-heading h2{
+font-size:2.3rem;
+}
+
+}
+
+/* =========================
+   MOBILE APP
+========================= */
+
+
+.app-buttons{
+
+display:flex;
+
+gap:15px;
+
+margin-top:30px;
+
+}
+
+.app-store,
+.play-store{
+
+padding:16px 24px;
+
+border-radius:14px;
+
+font-weight:700;
+
+display:flex;
+
+align-items:center;
+
+gap:10px;
+
+}
+
+.app-store{
+
+background:#031B4E;
+
+color:white;
+
+}
+
+.play-store{
+
+background:#0B5ED7;
+
+color:white;
+
+}
+
+
+/* MOBILE */
+
+@media(max-width:992px){
+
+.mobile-grid{
+
+grid-template-columns:1fr;
+
+text-align:center;
+
+}
+
+.mobile-features{
+
+grid-template-columns:1fr;
+
+}
+
+.app-buttons{
+
+justify-content:center;
+
+}
+
+.badge-one,
+.badge-two{
+
+display:none;
+
+}
+
+}
+
+@media(max-width:768px){
+
+.mobile-content h2{
+
+font-size:2.2rem;
+
+}
+
+.phone-frame{
+
+width:280px;
+
+}
+
+}
+
+/* MOBILE */
+
+@media(max-width:992px){
+
+.why-grid{
+
+grid-template-columns:1fr;
+
+}
+
+}
+
+/* MOBILE */
+
+@media(max-width:992px){
+
+.cards-grid{
+
+grid-template-columns:1fr;
+
+}
+
+}
+
+@media(max-width:992px){
+
+.banking-grid{
+
+grid-template-columns:1fr;
+
+text-align:center;
+
+}
+
+.reverse-grid{
+
+display:flex;
+
+flex-direction:column;
+
+}
+
+.cards-grid{
+
+grid-template-columns:1fr;
+
+}
+
+.feature-list{
+
+display:inline-block;
+
+text-align:left;
+
+}
+
+}
+
+@media(max-width:768px){
+
+.banking-content h2{
+
+font-size:2rem;
+
+}
+
+}
+
+/* =========================
+   LOANS SECTION
+========================= */
+
+.loans-section{
+
+padding:120px 0;
+background:white;
+
+}
+
+.loans-grid{
+
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:70px;
+align-items:center;
+
+}
+
+.loans-content h2{
+
+font-size:3rem;
+line-height:1.15;
+color:#031B4E;
+margin:20px 0;
+
+}
+
+.loans-content p{
+
+color:#64748B;
+line-height:1.9;
+margin-bottom:30px;
+
+}
+
+.loan-features{
+
+display:grid;
+gap:18px;
+margin-bottom:35px;
+
+}
+
+.loan-features li{
+
+display:flex;
+align-items:center;
+gap:12px;
+font-weight:600;
+
+}
+
+.loan-features i{
+
+color:#0B5ED7;
+
+}
+
+.loan-btn{
+
+display:inline-block;
+padding:15px 28px;
+background:#0B5ED7;
+color:white;
+border-radius:12px;
+font-weight:700;
+
+}
+
+/* RIGHT SIDE */
+
+.loan-visual{
+
+display:grid;
+grid-template-columns:repeat(2,1fr);
+gap:25px;
+
+}
+
+.loan-box{
+
+background:#F8FBFF;
+padding:40px 25px;
+border-radius:22px;
+text-align:center;
+border:1px solid #E5EEF9;
+
+}
+
+.loan-box h3{
+
+font-size:2rem;
+color:#0B5ED7;
+margin-bottom:10px;
+
+}
+
+.loan-box p{
+
+color:#64748B;
+
+}
+
+@media(max-width:992px){
+
+.loans-grid{
+grid-template-columns:1fr;
+}
+
+}
+
+/* =========================
+   MOBILE APP SECTION
+========================= */
+
+.app-section{
+
+padding:120px 0;
+background:#F8FBFF;
+
+}
+
+.app-grid{
+
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:80px;
+align-items:center;
+
+}
+
+/* PHONE */
+
+.app-phone{
+
+display:flex;
+justify-content:center;
+
+}
+
+.phone-frame{
+
+width:320px;
+background:#031B4E;
+border-radius:40px;
+padding:25px;
+color:white;
+box-shadow:0 25px 60px rgba(0,0,0,.18);
+
+}
+
+.phone-header{
+
+display:flex;
+justify-content:space-between;
+font-size:.9rem;
+margin-bottom:30px;
+
+}
+
+.app-balance{
+
+margin-bottom:25px;
+
+}
+
+.app-balance small{
+
+opacity:.8;
+
+}
+
+.app-balance h2{
+
+font-size:2rem;
+margin-top:10px;
+
+}
+
+.app-card-mini{
+
+background:linear-gradient(
+135deg,
+#0B5ED7,
+#4D8DFF
+);
+
+padding:20px;
+border-radius:20px;
+margin-bottom:25px;
+
+}
+
+.app-actions{
+
+display:flex;
+justify-content:space-between;
+text-align:center;
+
+}
+
+.app-actions div{
+
+display:flex;
+flex-direction:column;
+gap:8px;
+
+}
+
+/* CONTENT */
+
+.app-content h2{
+
+font-size:3rem;
+line-height:1.15;
+color:#031B4E;
+margin:20px 0;
+
+}
+
+.app-content p{
+
+color:#64748B;
+line-height:1.9;
+margin-bottom:35px;
+
+}
+
+.app-features{
+
+display:grid;
+grid-template-columns:repeat(2,1fr);
+gap:18px;
+margin-bottom:35px;
+
+}
+
+.feature-item{
+
+display:flex;
+align-items:center;
+gap:10px;
+font-weight:600;
+
+}
+
+.feature-item i{
+
+color:#0B5ED7;
+
+}
+
+.download-btn{
+
+display:inline-block;
+padding:15px 30px;
+background:#0B5ED7;
+color:white;
+border-radius:12px;
+font-weight:700;
+
+}
+
+@media(max-width:992px){
+
+.app-grid{
+grid-template-columns:1fr;
+}
+
+.app-content{
+text-align:center;
+}
+
+.app-features{
+grid-template-columns:1fr;
+}
+
+}
+
+
+/* =========================
+   TESTIMONIALS
+========================= */
+
+.testimonials-section{
+padding:120px 0;
+background:white;
+}
+
+.testimonial-grid{
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:30px;
+margin-top:60px;
+}
+
+.testimonial-card{
+background:#F8FBFF;
+padding:35px;
+border-radius:24px;
+border:1px solid #E5EEF9;
+transition:.3s;
+}
+
+.testimonial-card:hover{
+transform:translateY(-8px);
+box-shadow:0 20px 40px rgba(0,0,0,.08);
+}
+
+.stars{
+margin-bottom:20px;
+color:#F5B301;
+font-size:1rem;
+}
+
+.testimonial-card p{
+color:#64748B;
+line-height:1.9;
+margin-bottom:30px;
+}
+
+.client{
+display:flex;
+align-items:center;
+gap:15px;
+}
+
+.avatar{
+width:55px;
+height:55px;
+border-radius:50%;
+background:#0B5ED7;
+color:white;
+font-weight:700;
+display:flex;
+align-items:center;
+justify-content:center;
+font-size:1.1rem;
+}
+
+.client h4{
+color:#031B4E;
+margin-bottom:4px;
+}
+
+.client span{
+color:#64748B;
+font-size:.9rem;
+}
+
+
+/* =========================
+   STATISTICS
+========================= */
+
+.stats-section{
+padding:100px 0;
+background:
+linear-gradient(
+135deg,
+#031B4E,
+#0B5ED7
+);
+}
+
+.stats-grid{
+display:grid;
+grid-template-columns:repeat(4,1fr);
+gap:30px;
+}
+
+.stat-box{
+text-align:center;
+color:white;
+}
+
+.stat-box h2{
+font-size:3rem;
+font-weight:800;
+margin-bottom:10px;
+}
+
+.stat-box p{
+color:rgba(255,255,255,.8);
+font-size:1rem;
+}
+
+/* MOBILE */
+
+@media(max-width:992px){
+
+.stats-grid{
+grid-template-columns:repeat(2,1fr);
+gap:40px;
+}
+
+}
+
+@media(max-width:768px){
+
+.stats-grid{
+grid-template-columns:1fr;
+}
+
+}
+
+
+/* MOBILE */
+
+@media(max-width:992px){
+
+.testimonial-grid{
+grid-template-columns:1fr;
+}
+
+}
+
+
+/* =========================
+   FAQ SECTION
+========================= */
+
+.faq-section{
+padding:120px 0;
+background:#F8FBFF;
+}
+
+.faq-wrapper{
+max-width:900px;
+margin:60px auto 0;
+}
+
+.faq-item{
+background:white;
+border-radius:18px;
+margin-bottom:20px;
+overflow:hidden;
+border:1px solid #E5EEF9;
+}
+
+.faq-question{
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:25px 30px;
+cursor:pointer;
+}
+
+.faq-question h3{
+font-size:1.1rem;
+color:#031B4E;
+}
+
+.faq-question i{
+color:#0B5ED7;
+font-size:1rem;
+}
+
+.faq-answer{
+padding:0 30px 25px;
+}
+
+.faq-answer p{
+color:#64748B;
+line-height:1.8;
+}
+
+.faq-item:not(.active) .faq-answer{
+display:none;
+}
+
+
+/* =========================
+   CTA SECTION
+========================= */
+
+.cta-section{
+padding:120px 0;
+background:white;
+}
+
+.cta-box{
+
+background:
+linear-gradient(
+135deg,
+#031B4E,
+#0B5ED7
+);
+
+padding:90px 70px;
+border-radius:36px;
+text-align:center;
+color:white;
+overflow:hidden;
+position:relative;
+
+}
+
+.cta-box::before{
+
+content:"";
+position:absolute;
+width:450px;
+height:450px;
+border-radius:50%;
+background:
+rgba(255,255,255,.06);
+
+top:-220px;
+right:-150px;
+
+}
+
+.cta-box h2{
+
+font-size:3.2rem;
+line-height:1.15;
+margin:20px 0;
+
+}
+
+.cta-box p{
+
+max-width:700px;
+margin:auto;
+line-height:1.9;
+color:rgba(255,255,255,.85);
+
+}
+
+.cta-buttons{
+
+display:flex;
+justify-content:center;
+gap:20px;
+margin-top:40px;
+
+}
+
+.cta-primary{
+
+background:white;
+color:#031B4E;
+padding:16px 32px;
+border-radius:14px;
+font-weight:700;
+
+}
+
+.cta-secondary{
+
+border:1px solid rgba(255,255,255,.3);
+color:white;
+padding:16px 32px;
+border-radius:14px;
+font-weight:700;
+
+}
+
+@media(max-width:768px){
+
+.cta-box{
+
+padding:60px 30px;
+
+}
+
+.cta-box h2{
+
+font-size:2.2rem;
+
+}
+
+.cta-buttons{
+
+flex-direction:column;
+
+}
+
+}
+
+
+/* =========================
+   FOOTER
+========================= */
+
+.footer{
+
+background:#031B4E;
+color:white;
+padding:90px 0 30px;
+
+}
+
+.footer-grid{
+
+display:grid;
+grid-template-columns:2fr 1fr 1fr 1fr;
+gap:50px;
+
+}
+
+.footer-logo{
+
+display:flex;
+align-items:center;
+gap:12px;
+font-size:1.4rem;
+font-weight:800;
+margin-bottom:20px;
+
+}
+
+.footer-logo i{
+
+font-size:1.5rem;
+
+}
+
+.footer-about p{
+
+color:rgba(255,255,255,.75);
+line-height:1.9;
+max-width:350px;
+
+}
+
+.footer h4{
+
+margin-bottom:20px;
+font-size:1.05rem;
+
+}
+
+.footer ul li{
+
+margin-bottom:12px;
+
+}
+
+.footer ul a{
+
+color:rgba(255,255,255,.75);
+
+}
+
+.footer ul a:hover{
+
+color:white;
+
+}
+
+.footer-bottom{
+
+margin-top:60px;
+padding-top:30px;
+border-top:1px solid rgba(255,255,255,.1);
+
+display:flex;
+justify-content:space-between;
+align-items:center;
+
+}
+
+.footer-bottom p{
+
+color:rgba(255,255,255,.7);
+
+}
+
+.social-links{
+
+display:flex;
+gap:15px;
+
+}
+
+.social-links a{
+
+width:42px;
+height:42px;
+border-radius:50%;
+background:rgba(255,255,255,.08);
+
+display:flex;
+align-items:center;
+justify-content:center;
+color:white;
+
+}
+
+.social-links a:hover{
+
+background:#0B5ED7;
+
+}
+
+@media(max-width:992px){
+
+.footer-grid{
+
+grid-template-columns:1fr 1fr;
+
+}
+
+}
+
+@media(max-width:768px){
+
+.footer-grid{
+
+grid-template-columns:1fr;
+
+}
+
+.footer-bottom{
+
+flex-direction:column;
+gap:20px;
+text-align:center;
+
+}
+
+}
+
+
+/* MOBILE */
+
+@media(max-width:992px){
+
+.nav-links,
+.nav-actions{
+
+display:none;
+
+}
+
+.mobile-toggle{
+
+display:block;
+
+}
+
+.nav-links,
+.nav-buttons{
+
+display:none;
+
+}
+
+.hero-grid{
+
+grid-template-columns:1fr;
+
+text-align:center;
+
+}
+
+.hero-content p{
+
+margin:auto;
+
+}
+
+.hero-buttons{
+
+justify-content:center;
+
+}
+
+}
+
+
+@media(max-width:768px){
+
+.hero-content h1{
+
+font-size:2.5rem;
+
+}
+
+.nova-card{
+
+width:280px;
+
+height:180px;
+
+}
+
+.floating-badge{
+
+font-size:.85rem;
+
+}
+
+}
+</style>
+
+<body>
+
+<!-- ================= HEADER ================= -->
+
+<header class="header">
+
+<div class="container">
+
+<nav class="navbar">
+
+<a href="#" class="logo">
+
+<div class="logo-icon">
+<i class="fa-solid fa-building-columns"></i>
+</div>
+
+<span>NOVA Bank</span>
+
+</a>
+
+<ul class="nav-links">
+
+<li><a href="#">Personal</a></li>
+<li><a href="#">Business</a></li>
+<li><a href="#">Cards</a></li>
+<li><a href="#">Loans</a></li>
+<li><a href="#">Support</a></li>
+
+</ul>
+
+<div class="nav-actions">
+
+<a href="login.html" class="login-btn">
+Online Banking
+</a>
+
+<a href="register.html" class="open-btn">
+Open Account
+</a>
+
+</div>
+
+<div class="mobile-toggle" id="mobileToggle">
+
+<i class="fa-solid fa-bars"></i>
+
+</div>
+
+</nav>
+
+</div>
+
+</header>
+
+<!-- ================= MOBILE MENU ================= -->
+
+<div class="mobile-menu" id="mobileMenu">
+
+<div class="mobile-menu-header">
+
+<h3>NOVA Bank</h3>
+
+<i class="fa-solid fa-xmark" id="closeMenu"></i>
+
+</div>
+
+<a href="#home">Home</a>
+<a href="#services">Services</a>
+<a href="#personal">Personal Banking</a>
+<a href="#business">Business Banking</a>
+<a href="#loans">Loans</a>
+<a href="support.html">Support</a>
+
+<hr>
+
+<a href="login.html" class="mobile-login">
+Online Banking
+</a>
+
+<a href="register.html" class="mobile-open-btn">
+Open Account
+</a>
+
+</div>
+
+<!-- ================= HERO ================= -->
+
+<section class="hero">
+
+<div class="container">
+
+<div class="hero-grid">
+
+<!-- LEFT -->
+
+<div class="hero-content">
+
+<span class="hero-badge">
+
+<i class="fa-solid fa-shield-halved"></i>
+
+Trusted Digital Banking
+
+</span>
+
+<h1>
+
+Banking Built
+For The Future
+
+</h1>
+
+<p>
+
+Modern banking solutions designed for individuals,
+businesses and global transactions.
+
+Fast. Secure. Reliable.
+
+</p>
+
+<div class="hero-buttons">
+
+<a href="register.html" class="primary-btn">
+
+Open Account
+
+</a>
+
+<a href="login.html" class="secondary-btn">
+
+Online Banking
+
+</a>
+
+</div>
+
+</div>
+
+<!-- RIGHT -->
+
+<div class="hero-visual">
+
+<div class="nova-card">
+
+<div class="card-chip"></div>
+
+<h3>NOVA Platinum</h3>
+
+<p>Debit Card</p>
+
+</div>
+
+<div class="floating-badge security">
+
+<i class="fa-solid fa-shield-halved"></i>
+
+<span>Protected Banking</span>
+
+</div>
+
+<div class="floating-badge transfer">
+
+<i class="fa-solid fa-bolt"></i>
+
+<span>Instant Transfers</span>
+
+</div>
+
+<div class="floating-badge global">
+
+<i class="fa-solid fa-globe"></i>
+
+<span>Global Access</span>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<section class="trust-strip">
+
+<div class="container">
+
+<div class="trust-grid">
+
+<div class="trust-item">
+
+<i class="fa-solid fa-shield-halved"></i>
+
+<h3>Bank-Grade Security</h3>
+
+<p>Advanced encryption protects every transaction.</p>
+
+</div>
+
+<div class="trust-item">
+
+<i class="fa-solid fa-globe"></i>
+
+<h3>Global Banking</h3>
+
+<p>Access your account from anywhere in the world.</p>
+
+</div>
+
+<div class="trust-item">
+
+<i class="fa-solid fa-bolt"></i>
+
+<h3>Instant Transfers</h3>
+
+<p>Fast domestic and international payments.</p>
+
+</div>
+
+<div class="trust-item">
+
+<i class="fa-solid fa-headset"></i>
+
+<h3>24/7 Support</h3>
+
+<p>Dedicated banking specialists whenever needed.</p>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<section class="services">
+
+<div class="container">
+
+<div class="section-title">
+
+<span>OUR SERVICES</span>
+
+<h2>Everything You Need In One Bank</h2>
+
+<p>
+Modern financial solutions for individuals and businesses.
+</p>
+
+</div>
+
+<div class="services-grid">
+
+<div class="service-card">
+
+<i class="fa-solid fa-piggy-bank"></i>
+
+<h3>Savings Accounts</h3>
+
+<p>
+Flexible savings solutions designed for long-term growth.
+</p>
+
+</div>
+
+<div class="service-card">
+
+<i class="fa-solid fa-credit-card"></i>
+
+<h3>Cards</h3>
+
+<p>
+Secure debit and credit cards accepted worldwide.
+</p>
+
+</div>
+
+<div class="service-card">
+
+<i class="fa-solid fa-building"></i>
+
+<h3>Business Banking</h3>
+
+<p>
+Powerful banking tools for growing businesses.
+</p>
+
+</div>
+
+</div>
+
+</div>
+</section>
+
+
+<section class="banking-section">
+
+<div class="container">
+
+<div class="banking-grid">
+
+<div class="banking-content">
+
+<span class="section-label">
+PERSONAL BANKING
+</span>
+
+<h2>
+Banking Designed Around Your Life
+</h2>
+
+<p>
+
+Manage spending, transfer money, pay bills and save
+for the future through one secure platform.
+
+</p>
+
+<ul class="feature-list">
+
+<li>
+<i class="fa-solid fa-check"></i>
+Online & Mobile Banking
+</li>
+
+<li>
+<i class="fa-solid fa-check"></i>
+International Transfers
+</li>
+
+<li>
+<i class="fa-solid fa-check"></i>
+Bill Payments
+</li>
+
+<li>
+<i class="fa-solid fa-check"></i>
+Savings & Investments
+</li>
+
+</ul>
+
+<a href="register.html" class="blue-btn">
+Open An Account
+</a>
+
+</div>
+
+<div class="banking-image">
+
+<img src="images/personal-banking.png"
+alt="Personal Banking">
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<section class="banking-section light-bg">
+
+<div class="container">
+
+<div class="banking-grid reverse-grid">
+
+<div class="banking-image">
+
+<img src="images/business-banking.png"
+alt="Business Banking">
+
+</div>
+
+<div class="banking-content">
+
+<span class="section-label">
+BUSINESS BANKING
+</span>
+
+<h2>
+Banking Solutions For Growing Businesses
+</h2>
+
+<p>
+
+From startups to established enterprises,
+NOVA provides the financial tools needed
+to manage growth efficiently.
+
+</p>
+
+<ul class="feature-list">
+
+<li>
+<i class="fa-solid fa-check"></i>
+Business Accounts
+</li>
+
+<li>
+<i class="fa-solid fa-check"></i>
+Payroll Management
+</li>
+
+<li>
+<i class="fa-solid fa-check"></i>
+Merchant Services
+</li>
+
+<li>
+<i class="fa-solid fa-check"></i>
+Corporate Financing
+</li>
+
+</ul>
+
+<a href="#" class="blue-btn">
+Explore Business Banking
+</a>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<section class="cards-section">
+
+<div class="container">
+
+<div class="section-title">
+
+<span>CARDS</span>
+
+<h2>
+Premium Cards For Every Lifestyle
+</h2>
+
+<p>
+
+Secure, flexible and globally accepted cards
+designed for everyday spending and travel.
+
+</p>
+
+</div>
+
+<div class="cards-grid">
+
+<!-- PLATINUM -->
+
+<div class="bank-card platinum-card">
+
+<div class="card-top">
+
+<span>NOVA BANK</span>
+
+<i class="fa-solid fa-wifi"></i>
+
+</div>
+
+<div class="card-chip"></div>
+
+<div class="card-number">
+
+•••• •••• •••• 4821
+
+</div>
+
+<div class="card-bottom">
+
+<div>
+
+<small>Card Holder</small>
+
+<h4>JOHN SMITH</h4>
+
+</div>
+
+<div>
+
+<small>Valid Thru</small>
+
+<h4>08/30</h4>
+
+</div>
+
+</div>
+
+</div>
+
+<!-- GOLD -->
+
+<div class="bank-card gold-card">
+
+<div class="card-top">
+
+<span>NOVA BANK</span>
+
+<i class="fa-solid fa-wifi"></i>
+
+</div>
+
+<div class="card-chip"></div>
+
+<div class="card-number">
+
+•••• •••• •••• 9258
+
+</div>
+
+<div class="card-bottom">
+
+<div>
+
+<small>Card Holder</small>
+
+<h4>JANE MILLER</h4>
+
+</div>
+
+<div>
+
+<small>Valid Thru</small>
+
+<h4>05/31</h4>
+
+</div>
+
+</div>
+
+</div>
+
+<!-- BUSINESS -->
+
+<div class="bank-card business-card">
+
+<div class="card-top">
+
+<span>NOVA BUSINESS</span>
+
+<i class="fa-solid fa-wifi"></i>
+
+</div>
+
+<div class="card-chip"></div>
+
+<div class="card-number">
+
+•••• •••• •••• 7146
+
+</div>
+
+<div class="card-bottom">
+
+<div>
+
+<small>Company</small>
+
+<h4>NOVA GROUP</h4>
+
+</div>
+
+<div>
+
+<small>Valid Thru</small>
+
+<h4>09/31</h4>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- ================= WHY CHOOSE NOVA ================= -->
+
+<section class="why-nova">
+
+<div class="container">
+
+<div class="section-heading">
+
+<span class="section-tag">
+Why NOVA
+</span>
+
+<h2>
+A Smarter Way To Manage Your Money
+</h2>
+
+<p>
+Whether you're sending payments, growing a business,
+or planning for the future, NOVA Bank delivers secure,
+fast and convenient banking solutions built for modern life.
+</p>
+
+</div>
+
+<div class="why-grid">
+
+<div class="why-card">
+
+<i class="fa-solid fa-shield-halved"></i>
+
+<h3>Maximum Security</h3>
+
+<p>
+Advanced encryption and fraud monitoring protect your funds and information.
+</p>
+
+</div>
+
+<div class="why-card">
+
+<i class="fa-solid fa-bolt"></i>
+
+<h3>Instant Banking</h3>
+
+<p>
+Real-time transfers, account access and transaction notifications.
+</p>
+
+</div>
+
+<div class="why-card">
+
+<i class="fa-solid fa-mobile-screen"></i>
+
+<h3>Mobile First</h3>
+
+<p>
+Manage your finances anytime from any device with our digital platform.
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<section class="loans-section">
+
+<div class="container">
+
+<div class="loans-grid">
+
+<!-- LEFT -->
+
+<div class="loans-content">
+
+<span class="section-tag">
+Financing Solutions
+</span>
+
+<h2>
+Flexible Loans Designed Around Your Goals
+</h2>
+
+<p>
+
+Whether you're buying a home, expanding a business,
+or managing unexpected expenses, NOVA Bank provides
+competitive financing solutions with fast approvals.
+
+</p>
+
+<ul class="loan-features">
+
+<li>
+<i class="fa-solid fa-check"></i>
+Personal Loans
+</li>
+
+<li>
+<i class="fa-solid fa-check"></i>
+Home Financing
+</li>
+
+<li>
+<i class="fa-solid fa-check"></i>
+Business Loans
+</li>
+
+<li>
+<i class="fa-solid fa-check"></i>
+Quick Approval Process
+</li>
+
+</ul>
+
+<a href="#" class="loan-btn">
+Explore Loans
+</a>
+
+</div>
+
+<!-- RIGHT -->
+
+<div class="loan-visual">
+
+<div class="loan-box">
+
+<h3>$50M+</h3>
+
+<p>Loans Approved</p>
+
+</div>
+
+<div class="loan-box">
+
+<h3>24hrs</h3>
+
+<p>Fast Decision Time</p>
+
+</div>
+
+<div class="loan-box">
+
+<h3>4.8★</h3>
+
+<p>Customer Rating</p>
+
+</div>
+
+<div class="loan-box">
+
+<h3>120K+</h3>
+
+<p>Satisfied Clients</p>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<section class="app-section">
+
+<div class="container">
+
+<div class="app-grid">
+
+
+<!-- PHONE MOCKUP -->
+
+<div class="app-phone">
+
+<div class="phone-frame">
+
+<div class="phone-header">
+
+<span>9:41</span>
+
+<span>
+<i class="fa-solid fa-signal"></i>
+<i class="fa-solid fa-wifi"></i>
+<i class="fa-solid fa-battery-full"></i>
+</span>
+
+</div>
+
+<div class="app-balance">
+
+<small>Available Balance</small>
+
+<h2>$24,860.45</h2>
+
+</div>
+
+<div class="app-card-mini">
+
+<h4>NOVA Platinum</h4>
+
+<p>•••• 4821</p>
+
+</div>
+
+<div class="app-actions">
+
+<div>
+<i class="fa-solid fa-paper-plane"></i>
+<span>Send</span>
+</div>
+
+<div>
+<i class="fa-solid fa-money-bill-transfer"></i>
+<span>Transfer</span>
+</div>
+
+<div>
+<i class="fa-solid fa-credit-card"></i>
+<span>Cards</span>
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+<!-- CONTENT -->
+
+<div class="app-content">
+
+<span class="section-tag">
+Mobile Banking
+</span>
+
+<h2>
+Bank Wherever Life Takes You
+</h2>
+
+<p>
+
+Manage accounts, transfer funds, pay bills,
+track spending and receive instant notifications —
+all from one secure mobile banking experience.
+
+</p>
+
+<div class="app-features">
+
+<div class="feature-item">
+<i class="fa-solid fa-bell"></i>
+Real-Time Notifications
+</div>
+
+<div class="feature-item">
+<i class="fa-solid fa-fingerprint"></i>
+Biometric Security
+</div>
+
+<div class="feature-item">
+<i class="fa-solid fa-globe"></i>
+Global Access
+</div>
+
+<div class="feature-item">
+<i class="fa-solid fa-bolt"></i>
+Instant Transfers
+</div>
+
+</div>
+
+<div class="app-buttons">
+
+<a href="#" class="app-store">
+
+<i class="fa-brands fa-apple"></i>
+
+<span>App Store</span>
+
+</a>
+
+<a href="#" class="play-store">
+
+<i class="fa-brands fa-google-play"></i>
+
+<span>Google Play</span>
+
+</a>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- ================= TESTIMONIALS ================= -->
+
+<section class="testimonials-section">
+
+<div class="container">
+
+<div class="section-heading">
+
+<span class="section-tag">
+Customer Stories
+</span>
+
+<h2>
+Trusted By Customers Worldwide
+</h2>
+
+<p>
+Thousands of individuals and businesses rely on NOVA Bank
+for secure banking, fast transfers and exceptional service.
+</p>
+
+</div>
+
+<div class="testimonial-grid">
+
+<div class="testimonial-card">
+
+<div class="stars">
+<i class="fa-solid fa-star"></i>
+<i class="fa-solid fa-star"></i>
+<i class="fa-solid fa-star"></i>
+<i class="fa-solid fa-star"></i>
+<i class="fa-solid fa-star"></i>
+</div>
+
+<p>
+"NOVA completely changed how I manage my finances.
+Everything is fast, simple and incredibly secure."
+</p>
+
+<div class="client">
+
+<div class="avatar">J</div>
+
+<div>
+<h4>James Carter</h4>
+<span>Business Owner</span>
+</div>
+
+</div>
+
+</div>
+
+<div class="testimonial-card">
+
+<div class="stars">
+<i class="fa-solid fa-star"></i>
+<i class="fa-solid fa-star"></i>
+<i class="fa-solid fa-star"></i>
+<i class="fa-solid fa-star"></i>
+<i class="fa-solid fa-star"></i>
+</div>
+
+<p>
+"International transfers are instant and the mobile app
+is by far the best banking experience I've used."
+</p>
+
+<div class="client">
+
+<div class="avatar">S</div>
+
+<div>
+<h4>Sarah Williams</h4>
+<span>Entrepreneur</span>
+</div>
+
+</div>
+
+</div>
+
+<div class="testimonial-card">
+
+<div class="stars">
+<i class="fa-solid fa-star"></i>
+<i class="fa-solid fa-star"></i>
+<i class="fa-solid fa-star"></i>
+<i class="fa-solid fa-star"></i>
+<i class="fa-solid fa-star"></i>
+</div>
+
+<p>
+"The customer support team is always available and the
+security features give me complete peace of mind."
+</p>
+
+<div class="client">
+
+<div class="avatar">M</div>
+
+<div>
+<h4>Michael Reed</h4>
+<span>Consultant</span>
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- ================= STATISTICS ================= -->
+
+<section class="stats-section">
+
+<div class="container">
+
+<div class="stats-grid">
+
+<div class="stat-box">
+
+<h2>500K+</h2>
+
+<p>Active Customers</p>
+
+</div>
+
+<div class="stat-box">
+
+<h2>$12B+</h2>
+
+<p>Assets Managed</p>
+
+</div>
+
+<div class="stat-box">
+
+<h2>150+</h2>
+
+<p>Countries Supported</p>
+
+</div>
+
+<div class="stat-box">
+
+<h2>99.99%</h2>
+
+<p>Platform Uptime</p>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- ================= FAQ ================= -->
+
+<section class="faq-section">
+
+<div class="container">
+
+<div class="section-heading">
+
+<span class="section-tag">
+Frequently Asked Questions
+</span>
+
+<h2>
+Everything You Need To Know
+</h2>
+
+<p>
+Find answers to the most common questions about banking,
+transfers, loans and account management.
+</p>
+
+</div>
+
+<div class="faq-wrapper">
+
+<div class="faq-item active">
+
+<div class="faq-question">
+
+<h3>How do I open a NOVA Bank account?</h3>
+
+<i class="fa-solid fa-minus"></i>
+
+</div>
+
+<div class="faq-answer">
+
+<p>
+Opening an account takes only a few minutes. Complete the online registration form,
+verify your identity and gain immediate access to digital banking services.
+</p>
+
+</div>
+
+</div>
+
+<div class="faq-item">
+
+<div class="faq-question">
+
+<h3>Are international transfers supported?</h3>
+
+<i class="fa-solid fa-plus"></i>
+
+</div>
+
+<div class="faq-answer">
+
+<p>
+Yes. NOVA supports fast and secure international money transfers to multiple countries worldwide.
+</p>
+
+</div>
+
+</div>
+
+<div class="faq-item">
+
+<div class="faq-question">
+
+<h3>Can I apply for a loan online?</h3>
+
+<i class="fa-solid fa-plus"></i>
+
+</div>
+
+<div class="faq-answer">
+
+<p>
+Loan applications can be submitted directly through online banking or the NOVA mobile app.
+</p>
+
+</div>
+
+</div>
+
+<div class="faq-item">
+
+<div class="faq-question">
+
+<h3>How secure is NOVA Bank?</h3>
+
+<i class="fa-solid fa-plus"></i>
+
+</div>
+
+<div class="faq-answer">
+
+<p>
+NOVA uses advanced encryption, fraud monitoring and multi-factor authentication to protect customer accounts.
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- ================= CTA SECTION ================= -->
+
+<section class="cta-section">
+
+<div class="container">
+
+<div class="cta-box">
+
+<span class="section-tag">
+Start Banking Today
+</span>
+
+<h2>
+Ready To Experience Modern Banking?
+</h2>
+
+<p>
+Open your NOVA account in minutes and enjoy secure banking,
+instant transfers, flexible financing and global access —
+all from one powerful platform.
+</p>
+
+<div class="cta-buttons">
+
+<a href="register.html" class="cta-primary">
+Open Account
+</a>
+
+<a href="support.html" class="cta-secondary">
+Contact Support
+</a>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- ================= FOOTER ================= -->
+
+<footer class="footer">
+
+<div class="container">
+
+<div class="footer-grid">
+
+<div class="footer-about">
+
+<div class="footer-logo">
+
+<i class="fa-solid fa-building-columns"></i>
+
+<span>NOVA Bank</span>
+
+</div>
+
+<p>
+Modern banking solutions designed to help individuals
+and businesses manage money securely and efficiently.
+</p>
+
+</div>
+
+<div>
+
+<h4>Banking</h4>
+
+<ul>
+
+<li><a href="#">Personal Banking</a></li>
+<li><a href="#">Business Banking</a></li>
+<li><a href="#">Cards</a></li>
+<li><a href="#">Loans</a></li>
+
+</ul>
+
+</div>
+
+<div>
+
+<h4>Support</h4>
+
+<ul>
+
+<li><a href="#">Help Center</a></li>
+<li><a href="#">Security</a></li>
+<li><a href="#">Contact Us</a></li>
+<li><a href="#">FAQ</a></li>
+
+</ul>
+
+</div>
+
+<div>
+
+<h4>Legal</h4>
+
+<ul>
+
+<li><a href="#">Privacy Policy</a></li>
+<li><a href="#">Terms & Conditions</a></li>
+<li><a href="#">Cookie Policy</a></li>
+
+</ul>
+
+</div>
+
+</div>
+
+<div class="footer-bottom">
+
+<p>
+© 2026 NOVA Bank. All Rights Reserved.
+</p>
+
+<div class="social-links">
+
+<a href="#"><i class="fab fa-facebook-f"></i></a>
+
+<a href="#"><i class="fab fa-x-twitter"></i></a>
+
+<a href="#"><i class="fab fa-linkedin-in"></i></a>
+
+<a href="#"><i class="fab fa-instagram"></i></a>
+
+</div>
+
+</div>
+
+</div>
+
+</footer>
+
+<div class="mobile-menu-overlay" id="mobileOverlay"></div>
+<script src="script.js"></script>
+
+
+</body>
+</html>
