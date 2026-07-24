@@ -525,46 +525,43 @@ font-weight:700;
 
 .hero-visual{
 
+display:flex;
+justify-content:center;
+align-items:center;
+
 position:relative;
 
-height:450px;
+min-height:450px;
 
 }
 
 .nova-card{
 
-position:absolute;
-
-top:50%;
-
-left:50%;
-
-transform:
-translate(-50%,-50%);
-animation:floatCard 6s ease-in-out infinite;
+position:relative;
 
 width:340px;
-
 height:210px;
 
 padding:30px;
 
 border-radius:24px;
 
-background:
-
-linear-gradient(
+background:linear-gradient(
 135deg,
 #02102E,
 #0B5ED7
 );
 
-color:white;
+color:#fff;
 
-box-shadow:
-0 30px 70px rgba(0,0,0,.3);
+box-shadow:0 30px 70px rgba(0,0,0,.30);
+
+animation:floatCard 6s ease-in-out infinite;
+
+z-index:5;
 
 }
+
 
 .card-chip{
 
@@ -3530,4 +3527,4 @@ and businesses manage money securely and efficiently.
 
 
 </body>
-</html>
+</html> 
