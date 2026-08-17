@@ -93,6 +93,47 @@ border-bottom:1px solid #E5E7EB;
 
 }
 
+
+/* =========================================
+   NOVA BANK — PREMIUM HEADER ENHANCEMENT
+========================================= */
+
+header {
+    transition:
+        background 0.35s ease,
+        box-shadow 0.35s ease,
+        backdrop-filter 0.35s ease,
+        padding 0.35s ease;
+}
+
+/* Header after scrolling */
+
+header.scrolled {
+    background: rgba(255, 255, 255, 0.96);
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
+    box-shadow: 0 8px 30px rgba(5, 27, 70, 0.10);
+}
+
+/* Slightly reduce header height while scrolling */
+
+header.scrolled .container {
+    min-height: 70px;
+}
+
+/* Smooth navigation links */
+
+header a {
+    transition:
+        color 0.25s ease,
+        opacity 0.25s ease;
+}
+
+header a:hover {
+    opacity: 0.75;
+}
+
+
 .navbar{
 
 height:85px;
@@ -3523,6 +3564,7 @@ and businesses manage money securely and efficiently.
 </footer>
 
 <div class="mobile-menu-overlay" id="mobileOverlay"></div>
+
 <script src="script.js"></script>
 
 

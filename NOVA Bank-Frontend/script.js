@@ -51,6 +51,31 @@ if (
 }
 
 
+/* =========================================
+   NOVA BANK — HEADER SCROLL EFFECT
+========================================= */
+
+const siteHeader = document.querySelector("header");
+
+if (siteHeader) {
+
+    window.addEventListener("scroll", () => {
+
+        if (window.scrollY > 50) {
+
+            siteHeader.classList.add("scrolled");
+
+        } else {
+
+            siteHeader.classList.remove("scrolled");
+
+        }
+
+    });
+
+}
+
+
 // ======================================
 // FAQ SECTION
 // ======================================
