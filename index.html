@@ -93,6 +93,26 @@ border-bottom:1px solid #E5E7EB;
 
 }
 
+
+/* Slightly reduce header height while scrolling */
+
+header.scrolled .container {
+    min-height: 70px;
+}
+
+/* Smooth navigation links */
+
+header a {
+    transition:
+        color 0.25s ease,
+        opacity 0.25s ease;
+}
+
+header a:hover {
+    opacity: 0.75;
+}
+
+
 .navbar{
 
 height:85px;
@@ -2127,6 +2147,56 @@ font-size:.85rem;
 }
 
 }
+
+
+/* =========================================
+   NOVA BANK — SCROLL REVEAL ANIMATION
+========================================= */
+
+body.reveal-ready section {
+    opacity: 0;
+    transform: translateY(35px);
+    transition:
+        opacity 0.8s ease,
+        transform 0.8s ease;
+}
+
+body.reveal-ready section.revealed {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Don't animate the hero */
+body.reveal-ready .hero {
+    opacity: 1;
+    transform: none;
+}
+
+/* Slightly smoother animation for cards */
+
+body.reveal-ready .service-card,
+body.reveal-ready .banking-card,
+body.reveal-ready .card-item,
+body.reveal-ready .loan-card,
+body.reveal-ready .testimonial-card,
+body.reveal-ready .faq-item,
+body.reveal-ready .stat-card {
+    transition:
+        transform 0.35s ease,
+        box-shadow 0.35s ease;
+}
+
+/* Keep cards interactive */
+
+.service-card:hover,
+.banking-card:hover,
+.card-item:hover,
+.loan-card:hover,
+.testimonial-card:hover,
+.stat-card:hover {
+    transform: translateY(-6px);
+}
+
 </style>
 
 <body>

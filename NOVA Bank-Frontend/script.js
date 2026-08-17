@@ -76,6 +76,44 @@ if (siteHeader) {
 }
 
 
+/* =========================================
+   NOVA BANK — SCROLL REVEAL
+========================================= */
+
+document.body.classList.add("reveal-ready");
+
+const revealSections = document.querySelectorAll("section");
+
+const revealObserver = new IntersectionObserver(
+    (entries, observer) => {
+
+        entries.forEach(entry => {
+
+            if (entry.isIntersecting) {
+
+                entry.target.classList.add("revealed");
+
+                observer.unobserve(entry.target);
+
+            }
+
+        });
+
+    },
+    {
+        threshold: 0.12
+    }
+);
+
+revealSections.forEach(section => {
+
+    if (!section.classList.contains("hero")) {
+        revealObserver.observe(section);
+    }
+
+});
+
+
 // ======================================
 // FAQ SECTION
 // ======================================
